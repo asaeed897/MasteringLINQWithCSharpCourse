@@ -10,6 +10,9 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
+            // 1. Introduction
+
+            // Section 0 Completed 
         }
     }
 }
