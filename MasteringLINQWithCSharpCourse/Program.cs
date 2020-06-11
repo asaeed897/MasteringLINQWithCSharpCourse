@@ -10,7 +10,7 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
-            // 2. Overview
+            // 3. How LINQ Works
 
         }
     }
