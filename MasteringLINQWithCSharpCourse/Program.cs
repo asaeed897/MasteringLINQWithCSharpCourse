@@ -71,7 +71,7 @@ namespace MasteringLINQWithCSharpCourse
             {
                 Console.WriteLine(name);
             }
-            // 6. Start Using LINQPad
+            // 7. Generation Operations
 
         }
     }
