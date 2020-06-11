@@ -10,7 +10,7 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
-            // 3. How LINQ Works
+            // 4. IEnumerable<T>
 
         }
     }
