@@ -71,7 +71,7 @@ namespace MasteringLINQWithCSharpCourse
             {
                 Console.WriteLine(name);
             }
-            // 5. Implementing IEnumerable<T>
+            // 6. Start Using LINQPad
 
         }
     }
