@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace MasteringLINQWithCSharpCourse
 {
-
-
     class Program
     {
         static void Main(string[] args)
         {
             
-            // 8. Summary
+            // 9. Overview Section 2
 
         }
     }
