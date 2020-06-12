@@ -13,9 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 28. LINQ to Entities (EntityFramework)
-
-            // It takes Expression<Func<>> parameters
+            // 29. Async LINQ Queries (EntityFramework)
         }
     }
 }
