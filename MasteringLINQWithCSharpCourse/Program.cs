@@ -13,7 +13,9 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 26. The Magic of Expression Trees
+            // 27. IQueryable<T>
+
+            // It takes Expression<Func<>> parameters
         }
     }
 }
