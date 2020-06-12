@@ -11,8 +11,8 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
-            
-            // 15. Grouping Data Groupby and IGrouping<T>
+
+            // 16. Set Operations Distinct Except Intersect Union
 
         }
     }
