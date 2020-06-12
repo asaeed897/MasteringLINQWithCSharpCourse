@@ -13,7 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 27. IQueryable<T>
+            // 28. LINQ to Entities (EntityFramework)
 
             // It takes Expression<Func<>> parameters
         }
