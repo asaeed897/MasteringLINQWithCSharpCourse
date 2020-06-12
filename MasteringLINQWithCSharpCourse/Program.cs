@@ -13,7 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 21. Element Operations First, Last, Single, ElementAt
+            // 22. Concatenation Operations (Concat)
 
         }
     }
