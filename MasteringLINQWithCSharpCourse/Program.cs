@@ -13,7 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 22. Concatenation Operations (Concat)
+            // 23. Aggregation Operations Count Statistical Functions
 
         }
     }
