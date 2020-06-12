@@ -12,7 +12,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 16. Set Operations Distinct Except Intersect Union
+            // 17. Quantifier Operations All Any Contains
 
         }
     }
