@@ -6,45 +6,74 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using MoreLinq.Extensions;
 
 namespace MasteringLINQWithCSharpCourse
 {
 
     class Program
     {
-        void Process(IEnumerable<Human> people)
+        public Program()
         {
-            var ppl = people as IList<Human> ?? people.ToList();
-            var kids = ppl.Where(p => p.Age < 13);
-            var numberOfTeens = ppl.Count(p => p.Age >= 13 && p.Age <= 19);
+            //BatchDemo();
+            //InterleaveDemo();
+            //PermDemo();
+            SplitDemo();
         }
 
-        IEnumerable<Human> GetTeenagersNamedAdam(IEnumerable<Human> people)
+        private void SplitDemo()
         {
-            var result = new List<Human>();
-            foreach (var p in people)
+            var rand = new Random();
+            var numbers = Enumerable.Range(1, 100).Select(_ => rand.Next(10));
+
+            var split = numbers.Split(5);
+            foreach (var group in split)
+                Console.WriteLine($"{group.Count()} elements :" +
+                                  string.Join(", ", group));
+        }
+
+        private void PermDemo()
+        {
+            char[] letters = "draw".ToCharArray();
+
+            foreach (var item in letters.Permutations())
             {
-                if (p.Age >= 13 && p.Age <= 19)
-                    if (p.Name == "Adam")
-                        result.Add(p);
+                Console.WriteLine(new string(item.ToArray()));
             }
-            return result;
         }
 
-        void XmlDemo()
+        private void InterleaveDemo()
         {
-            var x = new XElement("foo", new XElement("bar")).ToString();
+            var rand = new Random();
+            var wholeNumbers = Enumerable.Range(1, 10).Select(_ => (double)rand.Next(10));
+            var fractNumbers = Enumerable.Range(1, 10).Select(_ => rand.NextDouble());
+
+            foreach (var d in wholeNumbers.Interleave(fractNumbers))
+            {
+                Console.Write(d);
+                Console.Write("\t");
+            }
+            Console.WriteLine();
+        }
+
+        private void BatchDemo()
+        {
+            var numbers = Enumerable.Range(1, 100);
+            foreach (var batch in numbers.Batch(10))
+            {
+                Console.WriteLine("Got a batch!");
+                foreach (var i in batch)
+                    Console.Write($"{i}\t");
+                Console.WriteLine();
+            }
         }
         static void Main(string[] args)
         {
+            new Program();
+            // 40. MoreLINQ
 
-            // 39. LINQ support in Resharper and Rider
+            // This is a extension and have many useful features 
         }
     }
-    public class Human
-    {
-        public string Name;
-        public int Age;
-    }
-
+    
 }
