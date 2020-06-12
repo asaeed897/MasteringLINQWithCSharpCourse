@@ -13,7 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 25. Overview Section 3
+            // 26. The Magic of Expression Trees
         }
     }
 }

@@ -3,10 +3,7 @@
   <Namespace>System.Drawing</Namespace>
 </Query>
 
-<Query>
-  <Reference>&lt;RuntimeDirectory&gt;\System.Drawing.dll</Reference>
-  <Namespace>System.Drawing</Namespace>
-</Query>
+
 
 var numbers = Enumerable.Range(1,10);
 Console.WriteLine("We have " + numbers.Count() + " elements");
