@@ -12,7 +12,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
             
-            // 12. Projection Operation Select and SelectMany
+            // 13. Filtering Data OfType and Where
 
         }
     }
