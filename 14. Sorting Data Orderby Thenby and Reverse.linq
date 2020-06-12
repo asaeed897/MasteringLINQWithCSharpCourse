@@ -1,4 +1,4 @@
-<Query Kind="Expression" />
+<Query Kind="Program" />
 
 
 void Main()

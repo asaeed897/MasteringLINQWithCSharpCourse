@@ -12,7 +12,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
             
-            // 14. Sorting Data Orderby, Thenby and Reverse
+            // 15. Grouping Data Groupby and IGrouping<T>
 
         }
     }
