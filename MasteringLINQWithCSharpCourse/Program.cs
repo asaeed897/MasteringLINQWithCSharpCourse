@@ -12,7 +12,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
             
-            // 13. Filtering Data OfType and Where
+            // 14. Sorting Data Orderby, Thenby and Reverse
 
         }
     }
