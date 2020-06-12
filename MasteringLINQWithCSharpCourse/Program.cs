@@ -14,7 +14,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 37. Overview Section 5
+            // 38. LINQ to XML
         }
     }
 }
