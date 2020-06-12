@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MasteringLINQWithCSharpCourse
@@ -12,32 +13,40 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
-            const int count = 50;
+            var cts = new CancellationTokenSource();
+            var items = ParallelEnumerable.Range(1, 20);
 
-            var items = Enumerable.Range(1, count).ToArray();
-            var results = new int[count];
-
-            items.AsParallel().ForAll(x =>
+            var results = items.WithCancellation(cts.Token).Select(i =>
             {
-                int newValue = x * x * x ;
-                Console.Write($"{newValue} ({Task.CurrentId})\t");
-                results[x - 1] = newValue;
+                double result = Math.Log10(i);
+
+                //if (result > 1) throw new InvalidOperationException();
+                Console.WriteLine($"i = {i}, tid = {Task.CurrentId}");
+                return result;
             });
-            Console.WriteLine();
-            Console.WriteLine();
-            //
-            // foreach (var i in results)
-            // {
-            //     Console.WriteLine($"{i}\t");
-            // }
 
-            var cubes = items.AsParallel().AsOrdered().Select(x => x * x * x);
-
-            foreach (var i in results)
+            try
             {
-                Console.Write($"{i}\t");
+                foreach (var c in results)
+                {
+                    if(c > 1)
+                        cts.Cancel();
+                    Console.WriteLine($"result = {c}");
+                }
             }
-            // 32. AsParallel and ParallelQuery
+            catch (AggregateException ae)
+            {
+                ae.Handle(e =>
+                {
+                    Console.WriteLine($"{e.GetType().Name}: {e.Message}");
+                    return true;
+                });
+            }
+            catch (OperationCanceledException e)
+            {
+                Console.WriteLine("Canceled");
+            }
+            // 33. Cancellation and Exceptions
         }
     }
 }
