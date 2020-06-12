@@ -1,8 +1,6 @@
-<Query Kind="Expression" />
+<Query Kind="Statements" />
 
-<Query Kind="Statements">
-  <Namespace>System.Collections</Namespace>
-</Query>
+
 
 var arr1 = new[]{1,2,3};
 var arr2 = new[]{1,2,3};

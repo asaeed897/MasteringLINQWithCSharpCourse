@@ -13,9 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 20. Equality Operations (SequenceEqual, NUnit comparisons)
-
-            // In unit testing we can use Is.EqualTo or Is.EquivalentTo
+            // 21. Element Operations First, Last, Single, ElementAt
 
         }
     }
