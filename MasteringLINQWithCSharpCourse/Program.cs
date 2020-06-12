@@ -13,8 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 24 Summary
-
+            // 25. Overview Section 3
         }
     }
 }
