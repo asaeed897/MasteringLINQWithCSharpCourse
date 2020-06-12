@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace MasteringLINQWithCSharpCourse
 {
+
     class Program
     {
         static void Main(string[] args)
         {
 
-            // 19. Join Operations Join and GroupJoin
+            // 20. Equality Operations (SequenceEqual, NUnit comparisons)
+
+            // In unit testing we can use Is.EqualTo or Is.EquivalentTo
 
         }
     }
