@@ -12,7 +12,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 17. Quantifier Operations All Any Contains
+            // 18. Partitions Data Skip(while) and Take(while)
 
         }
     }
