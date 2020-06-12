@@ -13,40 +13,22 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
-            var cts = new CancellationTokenSource();
-            var items = ParallelEnumerable.Range(1, 20);
+            var numbers = Enumerable.Range(1, 20).ToArray();
 
-            var results = items.WithCancellation(cts.Token).Select(i =>
-            {
-                double result = Math.Log10(i);
-
-                //if (result > 1) throw new InvalidOperationException();
-                Console.WriteLine($"i = {i}, tid = {Task.CurrentId}");
-                return result;
-            });
-
-            try
-            {
-                foreach (var c in results)
+            var results = numbers
+                .AsParallel()
+                .WithMergeOptions(ParallelMergeOptions.FullyBuffered)// there is NOT Buffered
+                .Select(x =>
                 {
-                    if(c > 1)
-                        cts.Cancel();
-                    Console.WriteLine($"result = {c}");
-                }
-            }
-            catch (AggregateException ae)
-            {
-                ae.Handle(e =>
-                {
-                    Console.WriteLine($"{e.GetType().Name}: {e.Message}");
-                    return true;
+                    var result = Math.Log10(x);
+                    Console.WriteLine($"Produced {result}");
+                    return result;
                 });
-            }
-            catch (OperationCanceledException e)
+            foreach (var result in results)
             {
-                Console.WriteLine("Canceled");
+                Console.WriteLine($"consumed {result}");
             }
-            // 33. Cancellation and Exceptions
+            // 34. Merge Options
         }
     }
 }
