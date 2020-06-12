@@ -13,7 +13,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 29. Async LINQ Queries (EntityFramework)
+            // 30. Summary
         }
     }
 }
