@@ -13,22 +13,22 @@ namespace MasteringLINQWithCSharpCourse
     {
         static void Main(string[] args)
         {
-            var numbers = Enumerable.Range(1, 20).ToArray();
+            var sum = ParallelEnumerable.Range(1, 1000).Sum();
 
-            var results = numbers
-                .AsParallel()
-                .WithMergeOptions(ParallelMergeOptions.FullyBuffered)// there is NOT Buffered
-                .Select(x =>
-                {
-                    var result = Math.Log10(x);
-                    Console.WriteLine($"Produced {result}");
-                    return result;
-                });
-            foreach (var result in results)
-            {
-                Console.WriteLine($"consumed {result}");
-            }
-            // 34. Merge Options
+            // we can also do that
+
+            var result = ParallelEnumerable.Range(1, 1000)
+                .Aggregate(
+                    0,
+                    (partialSum,i)=> partialSum +=i,
+                    (total, subtotal)=> total += subtotal,
+                    i =>i);
+
+            Console.WriteLine($"Sum = {sum}");
+
+            Console.WriteLine($"result = {result}");
+
+            // 35. Custom Aggregation
         }
     }
 }
