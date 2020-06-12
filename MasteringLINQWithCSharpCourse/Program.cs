@@ -12,7 +12,7 @@ namespace MasteringLINQWithCSharpCourse
         static void Main(string[] args)
         {
 
-            // 18. Partitions Data Skip(while) and Take(while)
+            // 19. Join Operations Join and GroupJoin
 
         }
     }
